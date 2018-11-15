@@ -13,6 +13,7 @@
     $ctrl.myHTML = '<span>Kirill</span>';
 
     $ctrl.incompleteCount = todoService.incompleteCount;
+    $ctrl.warningLevel = todoService.warningLevel;
 
     console.log($ctrl.todo.actions);
   }

@@ -5,7 +5,8 @@
 
   function todoService() {
     return {
-      incompleteCount
+      incompleteCount,
+      warningLevel
     };
 
     function incompleteCount(items) {
@@ -18,6 +19,11 @@
       });
 
       return count;
+    }
+    
+    function warningLevel(items) {
+      return incompleteCount(items) < 3
+      ? 'label-success' : 'label-warning'
     }
   }
 })();
