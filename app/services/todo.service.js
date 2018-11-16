@@ -30,10 +30,10 @@
         .catch(() => $q.reject('Error'));
     }
 
-    function deleteItem() {
-      return $http.delete('data/todo.json')
-        .then(res => res.data)
-        .catch(() => $q.reject('Error'));
+    function deleteItem(items) {
+      console.log(items.indexOf(items));
+        items.splice(items.indexOf(items), 1);
+
     }
 
     function incompleteCount(items) {
