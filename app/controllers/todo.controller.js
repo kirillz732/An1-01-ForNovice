@@ -8,14 +8,11 @@
   function Todo(model, todoService) {
     let $ctrl = this;
 
+    $ctrl.showComplete = true;
     $ctrl.todo = model;
-    $ctrl.myName = 'Kirill';
-    $ctrl.myHTML = '<span>Kirill</span>';
 
-    $ctrl.incompleteCount = todoService.incompleteCount;
-    $ctrl.warningLevel = todoService.warningLevel;
+    Object.assign($ctrl, todoService);
 
-    console.log($ctrl.todo.actions);
   }
 
 })();
