@@ -8,6 +8,7 @@
     return {
       addNewItem,
       getItems,
+      deleteItem,
       incompleteCount,
       warningLevel
     };
@@ -25,6 +26,12 @@
 
     function getItems() {
       return $http.get('data/todo.json')
+        .then(res => res.data)
+        .catch(() => $q.reject('Error'));
+    }
+
+    function deleteItem() {
+      return $http.delete('data/todo.json')
         .then(res => res.data)
         .catch(() => $q.reject('Error'));
     }
